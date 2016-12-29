@@ -1,0 +1,27 @@
+[
+	{
+		"name": "projects",
+		"priority": 0,
+		"created": { "$date": 1440179979693 },
+		"resources": ["headerImage"],
+		"value": {
+			"enabled": false,
+			"headline": "These are my various projects from around the net.",
+			"headerImage": null
+		}
+	},
+	{
+		"name": "blog",
+		"priority": 0,
+		"created": { "$date": 1440179979693 },
+		"resources": ["headerImage"],
+		"value": {
+			"enabled": false,
+			"headline": "My little musings. I hope you enjoy",
+			"headerImage": null,
+			"rss": {
+				"enabled": false
+			}
+		}
+	}
+]

@@ -1,0 +1,19 @@
+{
+  "name": "danielkrainas-www",
+  "version": "1.0.0",
+  "description": "danielkrainas.com website",
+  "main": "index.js",
+  "private": true,
+  "author": {
+    "name": "Daniel Krainas",
+    "email": "me@danielkrainas.com"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "grunt test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0"
+  }
+}
