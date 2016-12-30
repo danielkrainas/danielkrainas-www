@@ -5,6 +5,9 @@
     var riot = require('rollup-plugin-riot')
     var uglify = require('rollup-plugin-uglify')
     var ruReplace = require('rollup-plugin-replace')
+    var modRewrite = require('connect-modrewrite');
+    var serveStatic = require('serve-static');
+
     
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -19,8 +22,30 @@
         copy: {
             dist: {
                 files: [
-                    { expand: true, src: ['public/**'], dest: '.dist/' }
+                    { expand: true, cwd: 'public', src: ['**'], dest: '.dist/' }
                 ]
+            }
+        },
+
+        // The actual grunt server settings
+        connect: {
+            options: {
+                port: 9000,
+                // Change this to '0.0.0.0' to access the server from outside.
+                hostname: '0.0.0.0',
+                livereload: 5729
+            },
+            livereload: {
+                options: {
+                    keepalive: true,
+                    open: true,
+                    middleware: function (connect) {
+                        return [
+                            modRewrite(['^[^\\.]*$ /index.html [L]']),
+                            serveStatic('.dist')
+                        ];
+                    }
+                }
             }
         },
 
@@ -34,7 +59,7 @@
                     nodeResolve({
                         main: true,
                         jsnext: true,
-                        browser: true
+                        browser: false
                     }),
 
                     ruReplace({
@@ -56,13 +81,15 @@
 
             files: {
                 src: 'client/app.js',
-                dest: '.dist/public/scripts/app.js'
+                dest: '.dist/scripts/app.js'
             }
         }
     })
 
+    grunt.loadNpmTasks('grunt-contrib-connect')
     grunt.loadNpmTasks('grunt-rollup')
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.loadNpmTasks('grunt-contrib-copy')
-    grunt.registerTask('build', ['rollup'])
+    grunt.registerTask('build', ['copy:dist', 'rollup'])
+    grunt.registerTask('serve', ['build', 'connect:livereload'])
 }
