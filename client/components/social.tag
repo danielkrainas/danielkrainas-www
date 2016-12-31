@@ -1,5 +1,5 @@
 <social>
-	<ul class="social-icons { classes }">
+	<ul class="social-icons { opts.classes }">
 	    <li><a target="_blank" href="https://twitter.com/dkrainas"><i class="fa fa-twitter"></i></a></li>
 	    <li><a target="_blank" href="https://www.google.com/+DannyKrainas"><i class="fa fa-google-plus"></i></a></li>
 	    <li><a target="_blank" href="https://github.com/danielkrainas"><i class="fa fa-github"></i></a></li>

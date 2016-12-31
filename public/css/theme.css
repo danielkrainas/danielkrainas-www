@@ -30,3 +30,8 @@ ul.social-icons li a:hover i {
 #contact-form-holder {
   background-color: #07a2e2;
 }
+
+
+.fullview {
+	height: 100vh;
+}

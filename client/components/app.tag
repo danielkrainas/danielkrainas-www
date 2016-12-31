@@ -1,36 +1,34 @@
 <app>
 	<div class="content">
-		<screenpanel full="min,actual">
-			<section id="profile" class="black">
-			    <div id="profile-bg" class="editable-alpha" data-alpha="40" style="opacity: 0.4"><img src="/images/profile-bg.jpg" alt="Welcome" /></div>
+		<section id="profile" class="black fullview">
+		    <div id="profile-bg" class="editable-alpha" data-alpha="40" style="opacity: 0.4"><img src="/images/profile-bg.jpg" alt="Welcome" /></div>
 
-				<div class="content padded dark">
+			<div class="content padded dark">
 
-			    	<div class="top-bar">
+		    	<div class="top-bar">
 
-			        	<div class="pull-left">
-			            	<span class="social-text hidden-sm hidden-xs">Let's connect! &nbsp; &nbsp; </span>
-			                <social classes="si-pull-up"></social>
-			            </div>
-			            
-			            <!--<div class="pull-right">
-			            	<a href="#" class="hidden-xs"></a>
-			            </div>-->
-			            
-			        </div>
+		        	<div class="pull-left">
+		            	<span class="social-text hidden-sm hidden-xs">Let's connect! &nbsp; &nbsp; </span>
+		                <social classes="si-pull-up"></social>
+		            </div>
+		            
+		            <!--<div class="pull-right">
+		            	<a href="#" class="hidden-xs"></a>
+		            </div>-->
+		            
+		        </div>
 
-			        <div class="profile-content" style="margin-top: -84px;">
-			        	<h1 class="short">Daniel Krainas</h1>
-			            <h5>I am a <span class="text-green">proffessional</span> software developer &amp; <span class="text-orange">code</span> craftsman.</h5>
-			            <!--<a href="/contact" class="btn btn-default">Contact me</a>-->
-			        </div>
+		        <div class="profile-content" style="margin-top: -84px;">
+		        	<h1 class="short">Daniel Krainas</h1>
+		            <h5>I am a <span class="text-green">professional</span> software developer &amp; <span class="text-orange">code</span> craftsman.</h5>
+		            <!--<a href="/contact" class="btn btn-default">Contact me</a>-->
+		        </div>
 
-			        <div class="bottom-bar profile-bottom-bar hidden-xs">
-			            <contact classes="list-inline">
-			        </div>
-			    </div>
-			</section>
-		</screenpanel>
+		        <div class="bottom-bar profile-bottom-bar hidden-xs">
+		            <!--<contact classes="list-inline">-->
+		        </div>
+		    </div>
+		</section>
 	</div>
 </app>
 
