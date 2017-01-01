@@ -14,7 +14,7 @@
 
         watch: {
             client: {
-                files: ['client/*.js', 'client/components/*.tag'],
+                files: ['client/*.js', 'client/components/*.tag', 'public/**'],
                 tasks: ['build']
             }
         },
@@ -24,6 +24,13 @@
                 files: [
                     { expand: true, cwd: 'public', src: ['**'], dest: '.dist/' }
                 ]
+            }
+        },
+
+        concurrent: {
+            tasks: ['connect:livereload', 'watch'],
+            options: {
+                logConcurrentOutput: true
             }
         },
 
@@ -88,6 +95,7 @@
     grunt.loadNpmTasks('grunt-rollup')
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.loadNpmTasks('grunt-contrib-copy')
+    grunt.loadNpmTasks('grunt-concurrent')
     grunt.registerTask('build', ['copy:dist', 'rollup'])
-    grunt.registerTask('serve', ['build', 'connect:livereload'])
+    grunt.registerTask('serve', ['build', 'concurrent'])
 }
