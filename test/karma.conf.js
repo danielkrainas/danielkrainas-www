@@ -15,13 +15,13 @@ module.exports = function (config) {
 
         files: [
             'node_modules/chai/chai.js',
-            'client/components/*.tag',
+            'lib/components/*.tag',
             'test/spec/*.js',
-            { pattern: 'public/**/*', included: false, served: true, watched: false }
+            { pattern: 'assets/**/*', included: false, served: true, watched: false }
         ],
 
         proxies: {
-            "/": "/public/"
+            "/": "/assets/"
         },
 
         preprocessors: {

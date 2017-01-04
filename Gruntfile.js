@@ -14,7 +14,7 @@
 
         watch: {
             client: {
-                files: ['client/*.js', 'client/components/*.tag', 'public/**'],
+                files: ['lib/*.js', 'lib/components/*.tag', 'assets/**', 'styles/*.styl'],
                 tasks: ['build'],
                 options: {
                     livereload: 5729,
@@ -26,7 +26,7 @@
         copy: {
             dist: {
                 files: [
-                    { expand: true, cwd: 'public', src: ['**'], dest: '.dist/' }
+                    { expand: true, cwd: 'assets', src: ['**'], dest: '.dist/'  },
                 ]
             }
         },
@@ -60,7 +60,7 @@
 
         rollup: {
             options: {
-                entry: './client/app.js',
+                entry: './lib/app.js',
 
                 plugins: [
                     riot(),
@@ -89,7 +89,7 @@
             },
 
             files: {
-                src: 'client/app.js',
+                src: 'lib/app.js',
                 dest: '.dist/scripts/app.js'
             }
         },
@@ -97,6 +97,20 @@
         karma: {
             unit: {
                 configFile: 'test/karma.conf.js'
+            }
+        },
+
+        stylus: {
+            styles: {
+                options: {
+                    relativeDest: '../.dist/css'
+                },
+
+                files: [{ 
+                    expand: true,
+                    src: ['styles/*.styl'], 
+                    ext: '.css' 
+                }]
             }
         }
     })
@@ -107,6 +121,11 @@
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.loadNpmTasks('grunt-contrib-copy')
     grunt.loadNpmTasks('grunt-concurrent')
-    grunt.registerTask('build', ['copy:dist', 'rollup'])
+    grunt.loadNpmTasks('grunt-contrib-stylus')
+
+    grunt.registerTask('styles', ['stylus'])
+
+    grunt.registerTask('build', ['copy:dist', 'styles', 'rollup'])
     grunt.registerTask('serve', ['build', 'concurrent'])
+    grunt.registerTask('test', ['karma:unit'])
 }
