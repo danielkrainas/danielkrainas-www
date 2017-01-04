@@ -88,9 +88,16 @@
                 src: 'client/app.js',
                 dest: '.dist/scripts/app.js'
             }
+        },
+
+        karma: {
+            unit: {
+                configFile: 'test/karma.conf.js'
+            }
         }
     })
 
+    grunt.loadNpmTasks('grunt-karma')
     grunt.loadNpmTasks('grunt-contrib-connect')
     grunt.loadNpmTasks('grunt-rollup')
     grunt.loadNpmTasks('grunt-contrib-watch')
