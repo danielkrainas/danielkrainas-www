@@ -5,8 +5,8 @@
     var riot = require('rollup-plugin-riot')
     var uglify = require('rollup-plugin-uglify')
     var ruReplace = require('rollup-plugin-replace')
-    var modRewrite = require('connect-modrewrite');
-    var serveStatic = require('serve-static');
+    var modRewrite = require('connect-modrewrite')
+    var serveStatic = require('serve-static')
 
     
     grunt.initConfig({
@@ -15,7 +15,11 @@
         watch: {
             client: {
                 files: ['client/*.js', 'client/components/*.tag', 'public/**'],
-                tasks: ['build']
+                tasks: ['build'],
+                options: {
+                    livereload: 5729,
+                    livereloadOnError: false
+                }
             }
         },
 
