@@ -1,7 +1,7 @@
 <app>
 	<div class="content">
 		<section id="profile" class="black fullview">
-		    <div id="profile-bg" class="editable-alpha" data-alpha="40" style="opacity: 0.4"><img src="/images/profile-bg.jpg" alt="Welcome" /></div>
+		    <div id="profile-bg" class="editable-alpha" data-alpha="40" style="opacity: 0.4"><img src="/images/landing-bg.jpg" alt="Welcome" /></div>
 
 			<div class="content padded dark">
 
