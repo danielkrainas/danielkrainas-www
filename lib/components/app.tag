@@ -20,7 +20,7 @@
 
 		        <div class="profile-content" style="margin-top: -84px;">
 		        	<h1 class="short">Daniel Krainas</h1>
-		            <h5>I am a <span class="text-green">professional</span> software developer &amp; <span class="text-orange">code</span> craftsman.</h5>
+		            <h5>I am a professional <span class="text-orange">code</span> craftsman &amp; <span class="text-green">software</span> engineer.</h5>
 		            <!--<a href="/contact" class="btn btn-default">Contact me</a>-->
 		        </div>
 
