@@ -14,7 +14,7 @@
 
         watch: {
             client: {
-                files: ['lib/*.js', 'lib/components/*.tag', 'assets/**', 'styles/*.styl'],
+                files: ['src/*.js', 'src/**/*.js', 'src/**/*.tag', 'assets/**', 'styles/*.styl'],
                 tasks: ['build'],
                 options: {
                     livereload: 5729,
@@ -60,7 +60,7 @@
 
         rollup: {
             options: {
-                entry: './lib/app.js',
+                entry: './src/index.js',
 
                 plugins: [
                     riot(),
@@ -89,7 +89,7 @@
             },
 
             files: {
-                src: 'lib/app.js',
+                src: 'src/index.js',
                 dest: '.dist/scripts/app.js'
             }
         },
