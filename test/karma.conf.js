@@ -15,7 +15,7 @@ module.exports = function (config) {
 
         files: [
             'node_modules/chai/chai.js',
-            'lib/components/*.tag',
+            'src/**/*.tag',
             'test/spec/*.js',
             { pattern: 'assets/**/*', included: false, served: true, watched: false }
         ],
