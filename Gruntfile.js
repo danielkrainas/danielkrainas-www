@@ -1,10 +1,13 @@
-﻿module.exports = function(grunt) {
+﻿process.env.NODE_ENV = process.env.NODE_ENV || 'production'
+
+module.exports = function(grunt) {
     var babel = require('rollup-plugin-babel')
     var nodeResolve = require('rollup-plugin-node-resolve')
     var commonjs = require('rollup-plugin-commonjs')
     var riot = require('rollup-plugin-riot')
     var uglify = require('rollup-plugin-uglify')
     var ruReplace = require('rollup-plugin-replace')
+    var alias = require('rollup-plugin-alias')
     var modRewrite = require('connect-modrewrite')
     var serveStatic = require('serve-static')
 
@@ -65,6 +68,10 @@
                 plugins: [
                     riot(),
 
+                    alias({
+                        config: __dirname + '/config/' + process.env.NODE_ENV
+                    }),
+
                     nodeResolve({
                         main: true,
                         jsnext: true,
@@ -72,7 +79,7 @@
                     }),
 
                     ruReplace({
-                        'process.env.NODE_ENV': JSON.stringify('production')
+                        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
                     }),
 
                     commonjs(),

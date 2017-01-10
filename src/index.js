@@ -1,6 +1,7 @@
 import riot from 'riot'
 import route from 'riot-route'
 import reduxMixin from 'riot-redux-mixin'
+import config from 'config'
 import { storeFactory, dispatchRoutes, routingAdapter, routeMixin, routeReducer } from './app'
 
 import './app/social.tag'

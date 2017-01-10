@@ -39,6 +39,7 @@
     "riot": "^3.0.5",
     "riot-redux-mixin": "^1.0.0",
     "riot-route": "^3.0.2",
+    "rollup-plugin-alias": "^1.2.0",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
